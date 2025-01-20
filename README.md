@@ -13,7 +13,7 @@ This is a simple Blog API built using Laravel for an interview task. The API pro
 1. Clone the repository: 
 
     ```
-    git clone <repository_url>
+    git clone git@github.com:eldeeno/blog-api.git
     cd blog-api
     ```
 2. Install dependencies:
