@@ -24,11 +24,7 @@ Route::prefix('/v1')->group(function() {
     });
 
     Route::middleware('auth:sanctum')->group(function () {
-        Route::get('/posts', [PostController::class, 'getPosts']);
-        Route::get('/posts/{id}', [PostController::class, 'getPost']);
-        Route::post('/posts', [PostController::class, 'createPost']);
-        Route::put('/posts/{id}', [PostController::class, 'updatePost']);
-        Route::delete('/posts/{id}', [PostController::class, 'deletePost']);
+        Route::apiResource('posts', PostController::class);
     });
 
     Route::get('/activity-logs', [ActivityLogController::class, 'index']);

@@ -12,25 +12,25 @@ class PostService
      */
     public function __construct(private Post $post) {}
 
-    public function fetchAll()
+    public function fetchPosts()
     {
         return $this->post
             ->orderBy('created_at', 'DESC')
             ->get();
     }
 
-    public function fetch(int $id)
+    public function fetchPost(int $id)
     {
         return $this->post->findOrFail($id);
     }
 
-    public function create(array $data)
+    public function createPost(array $data)
     {
         $data['user_id'] = Auth::user()->id;
         return $this->post->create($data);
     }
 
-    public function update(array $data, int $id)
+    public function updatePost(array $data, int $id)
     {
         $post = $this->post->findOrFail($id);
         $post->update($data);
@@ -38,7 +38,7 @@ class PostService
         return $post;
     }
 
-    public function delete(int $id): void
+    public function deletePost(int $id): void
     {
         $this->post->destroy($id);
     }
