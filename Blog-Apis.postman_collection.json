@@ -1,0 +1,654 @@
+{
+	"info": {
+		"_postman_id": "55d62693-ce97-4142-8a40-b87d1bba0866",
+		"name": "Blog Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40841117"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"raliyah@gmail.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Login Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logged in successfully.\",\n    \"data\": {\n        \"name\": \"Shams Abdul\",\n        \"email\": \"shamsabdul@gmail.com\",\n        \"token\": \"2|CwqPso7NKIZwHO2VPz7728hc5tyrir3kyjYTKb8A17db3dba\"\n    }\n}"
+						},
+						{
+							"name": "500 Invalid Credentials",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logged in successfully.\",\n    \"data\": {\n        \"name\": \"Shams Abdul\",\n        \"email\": \"shamsabdul@gmail.com\",\n        \"token\": \"2|CwqPso7NKIZwHO2VPz7728hc5tyrir3kyjYTKb8A17db3dba\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Raliyah Adamu\",\n    \"email\": \"raliyah@gmail.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Register",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Shmasuddeen Abdulkadir\",\n    \"email\": \"ibnabdulkadirb@gmail.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"name\": \"Shamsuddeen Abdulkadir\",\n    \"email\": \"shams@gmail.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}"
+						},
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Shmasuddeen Abdulkadir\",\n    \"email\": \"ibnabdulkadirb@gmail.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"This email is already in use. (and 1 more error)\",\n    \"errors\": {\n        \"email\": [\n            \"This email is already in use.\"\n        ],\n        \"password\": [\n            \"The password confirmation does not match.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BEARER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/posts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Get Posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Vel officia dolores corrupti.\",\n            \"content\": \"Ad fugiat sed est voluptatem in eius. Quaerat quam eos accusantium ut consequatur. Sint consequatur itaque voluptatem culpa veritatis voluptatem repellendus.\\n\\nOmnis eveniet minima fugit facilis ipsam culpa laudantium. Reprehenderit enim aspernatur quia illum sed vitae. Eum error qui dolorem ullam maxime. Voluptatem minima impedit voluptas et.\\n\\nDolor ut reiciendis et et omnis quo cupiditate. Sapiente in dolor quo et quam eaque.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Nam officia et suscipit.\",\n            \"content\": \"Corrupti accusantium quidem quia distinctio. Ullam aliquam rerum ut est similique. Aliquid sint a quos similique. Sit voluptatibus exercitationem quae cum impedit provident.\\n\\nBeatae recusandae velit possimus adipisci. Magni nesciunt aut dignissimos quia facilis vel cumque ut. Quae recusandae necessitatibus sed rerum sapiente atque.\\n\\nTenetur possimus enim est iusto blanditiis. Possimus ullam quasi eaque corporis quia sit. Est atque dolore et perferendis consequatur asperiores earum blanditiis.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Aut minima et cum eos doloremque.\",\n            \"content\": \"Soluta veniam distinctio quia consequatur consectetur dolor. Non ex pariatur vel deleniti debitis.\\n\\nQuam non eius autem atque vitae temporibus facere saepe. Provident vero libero inventore quod repudiandae laborum sunt. Corrupti modi blanditiis dolores maxime alias.\\n\\nEx officia odio est a. Maiores ut eligendi aperiam numquam. Voluptatum non incidunt error tenetur quaerat aliquid.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Totam nobis eaque voluptate voluptatem necessitatibus id numquam.\",\n            \"content\": \"Qui nihil autem sunt at ipsa est ea quia. Vel debitis sit aut nulla fugit facere qui. Numquam sapiente quaerat error omnis quaerat voluptas minus.\\n\\nCumque iste nihil est deleniti quis. Itaque eum eum quam soluta cupiditate. Aut ipsam nisi aut et nihil. Accusamus vitae veniam omnis praesentium placeat ipsum.\\n\\nDolor dicta eius labore eveniet ipsam accusamus modi. Tenetur numquam voluptatem sunt ex explicabo voluptatem ut. Aut modi vel ut corporis. Voluptatum cupiditate eos nam.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Non itaque et laborum doloremque minima voluptas.\",\n            \"content\": \"Sint dicta deserunt occaecati sapiente beatae eligendi qui id. Et eos mollitia ipsam corporis mollitia soluta quis rerum. Blanditiis sapiente ex nihil. Consequatur optio ut eos fuga.\\n\\nArchitecto qui ipsum omnis tempore vel vel facilis. Veniam quod enim non soluta asperiores autem dolor. Et ullam quas explicabo porro velit autem. Iusto ipsa sapiente expedita non molestiae.\\n\\nSunt reprehenderit rerum voluptas a. Sequi quos deserunt rerum aut ea ducimus laborum. Asperiores possimus sunt consequatur quia natus quia. Iure sit ducimus vel aut nisi eos nesciunt maxime.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Ad voluptas illum eum aspernatur ut enim.\",\n            \"content\": \"Sed odio consequatur voluptas sit sunt asperiores unde deleniti. Cumque velit quibusdam similique. Neque sint autem sit. Similique inventore ex illum laboriosam.\\n\\nVoluptatem alias reprehenderit iusto fugiat aut non dolore. Nihil aspernatur officia nam est quam laudantium. Ea et aut sed ullam architecto eligendi.\\n\\nEt magnam vero atque aut. Sunt sequi soluta omnis aut consequatur. Fugit perspiciatis itaque ipsa facere qui. Dolorum tempora quis sequi. Possimus est eveniet iusto sunt dolorem.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Voluptatem reiciendis sint temporibus sint est magni maxime.\",\n            \"content\": \"Error perspiciatis optio eum illum qui. Ipsam placeat voluptatibus eveniet culpa voluptate ea. Vel quia modi provident totam eos aliquam laudantium sit.\\n\\nOmnis ullam pariatur eligendi suscipit ipsa molestiae inventore eos. Doloremque minima et quia natus distinctio nam.\\n\\nAccusamus unde distinctio hic. Necessitatibus expedita impedit similique aspernatur. Facere dolore optio autem voluptate. Sequi voluptates iusto rerum est porro et distinctio perspiciatis.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Id voluptatem animi eligendi itaque asperiores.\",\n            \"content\": \"Consequatur consequatur quam quia doloremque et voluptas. Nesciunt rerum necessitatibus occaecati tenetur blanditiis. Iure voluptatibus illum ut iure omnis.\\n\\nVoluptatem voluptates consequatur sit. Similique rerum in et reiciendis aut beatae necessitatibus. Totam laboriosam aperiam exercitationem excepturi quo. Vel sunt fugiat dicta sit. Ex et possimus quod dolor maxime numquam.\\n\\nDignissimos atque suscipit est animi et quam sunt. Tenetur est recusandae consequatur est iste tempora qui. Delectus labore quasi natus voluptatibus provident. Porro praesentium cumque nihil.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Officia numquam nobis autem quas.\",\n            \"content\": \"Et laborum quis quo ipsum sapiente. Et at similique molestiae consequatur ipsa in. Similique occaecati aliquam perferendis excepturi vitae ullam ea. Mollitia molestias et similique voluptas nesciunt magnam doloremque ut. Soluta veniam tempore quasi ratione hic.\\n\\nReprehenderit quod totam labore odit consequatur exercitationem et. Et eaque eos non iste delectus. Voluptas velit ut est molestiae quidem eius. Mollitia consequuntur voluptas aspernatur quisquam soluta. Qui dolor ut pariatur nam fugit qui.\\n\\nAdipisci nemo cum ipsam consectetur tempore perferendis voluptatem. Ut sunt quam sed omnis sed odit rerum est. Deserunt et ipsam voluptatum.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"Omnis id accusantium quis dolor.\",\n            \"content\": \"Sit voluptatum quod autem laudantium atque qui. Quas neque quaerat quaerat. Modi rerum aliquam non deleniti.\\n\\nSit dolores incidunt et mollitia est exercitationem ut. Ea officiis molestiae dignissimos est vitae veniam quam eius. Ipsam necessitatibus odit harum qui. Esse autem molestiae eum natus.\\n\\nQui perspiciatis consectetur illum ut numquam. Tempora distinctio et rerum. Quod et repudiandae repellat hic accusantium et perspiciatis hic. Eum in perferendis quo sunt. Eius rerum recusandae est fuga at.\",\n            \"user\": \"Shamsuddeen Abdulkadir\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BEARER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/posts/12",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"posts",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 View Post",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Fetched successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Vel officia dolores corrupti.\",\n        \"content\": \"Ad fugiat sed est voluptatem in eius. Quaerat quam eos accusantium ut consequatur. Sint consequatur itaque voluptatem culpa veritatis voluptatem repellendus.\\n\\nOmnis eveniet minima fugit facilis ipsam culpa laudantium. Reprehenderit enim aspernatur quia illum sed vitae. Eum error qui dolorem ullam maxime. Voluptatem minima impedit voluptas et.\\n\\nDolor ut reiciendis et et omnis quo cupiditate. Sapiente in dolor quo et quam eaque.\",\n        \"user\": \"Shamsuddeen Abdulkadir\"\n    }\n}"
+						},
+						{
+							"name": "401 Unauthenticated",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BEARER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"My Post at 11PM\",\n    \"content\": \"This is my first blogpost and I am trying to test the endpoint for creating posts\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/posts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"The selected user does not exist in our record.\",\n    \"errors\": {\n        \"user_id\": [\n            \"The selected user does not exist in our record.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"My Post\",\n    \"content\": \"This is my first blogpost and I am trying to test the endpoint for creating posts\",\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/posts",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Post created successfully.\",\n    \"data\": {\n        \"id\": 11,\n        \"title\": \"My Post 123\",\n        \"content\": \"This is my first blogpost and I am trying to test the endpoint for creating posts\",\n        \"user\": \"Shams Abdul\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BEARER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New Title\",\n    \"content\": \"New content updated from the api\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/posts/6",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"posts",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Update Post",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Post updated successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"New Title\",\n        \"content\": \"New content updated from the api\",\n        \"user\": \"Shamsuddeen Abdulkadir\"\n    }\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"New Title\",\n    \"content\": \"New content updated from the api\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/posts/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"posts",
+										"1"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"You are not authorized to perform this action.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BEARER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/posts/6",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"posts",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Dlete Post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Post deleted successfully.\"\n}"
+						},
+						{
+							"name": "500 Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": []
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"You are not authorized to perform this action.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Activity Log",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{BEARER_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/activity-logs",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"activity-logs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Activity Log",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/activity-logs",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"activity-logs"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Activities fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"log_name\": \"default\",\n            \"description\": \"created\",\n            \"subject_type\": \"App\\\\Models\\\\User\",\n            \"event\": \"created\",\n            \"subject_id\": 9,\n            \"causer_type\": null,\n            \"causer_id\": null,\n            \"properties\": {\n                \"attributes\": {\n                    \"name\": \"Raliyah Adamu\",\n                    \"email\": \"raliyah@gmail.com\"\n                }\n            },\n            \"batch_uuid\": null,\n            \"created_at\": \"2025-01-19T21:36:59.000000Z\",\n            \"updated_at\": \"2025-01-19T21:36:59.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"log_name\": \"default\",\n            \"description\": \"created\",\n            \"subject_type\": \"App\\\\Models\\\\Post\",\n            \"event\": \"created\",\n            \"subject_id\": 14,\n            \"causer_type\": \"App\\\\Models\\\\User\",\n            \"causer_id\": 9,\n            \"properties\": {\n                \"attributes\": {\n                    \"title\": \"My Post at 11PM\",\n                    \"content\": \"This is my first blogpost and I am trying to test the endpoint for creating posts\"\n                }\n            },\n            \"batch_uuid\": null,\n            \"created_at\": \"2025-01-19T21:48:21.000000Z\",\n            \"updated_at\": \"2025-01-19T21:48:21.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		},
+		{
+			"key": "BEARER_TOKEN",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
